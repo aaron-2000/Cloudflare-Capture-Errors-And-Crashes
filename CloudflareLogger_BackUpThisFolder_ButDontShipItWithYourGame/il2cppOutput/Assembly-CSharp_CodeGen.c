@@ -1,0 +1,96 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void CrashReportPayload__ctor_m3A78E153E73DEFC0C101087E6C61378B1970D6D1 (void);
+extern void CloudLogger_Start_mAEF005CFFDF086706B7008497CAEA3D97BED33CB (void);
+extern void CloudLogger_OnEnable_m1D058F2837BE484E6370701C3BC1EA72B98FB414 (void);
+extern void CloudLogger_OnDisable_mBFDF3CB46583A8E15A090ECFB9F2A50AE1F2F802 (void);
+extern void CloudLogger_CaptureLog_m21FD8D0A161E9081ECD081AB046FB3E3A9EE26D1 (void);
+extern void CloudLogger_SendReport_mF60D5D48C41354D7C53173025E213DAD8F454A2C (void);
+extern void CloudLogger_SendNullReferenceException_m6F207E683E77B34138DCA98A495EB85376A3DC71 (void);
+extern void CloudLogger_SendInvalidOperationException_mCAA15D33167B0E66E6A41E26015C233C3C105D5D (void);
+extern void CloudLogger_SendArgumentException_mE37A792C76F661F1406174EDE23EDC97D2675BE7 (void);
+extern void CloudLogger_SendCrash_m4591609812D4544E29AB17A7ECD012828DE5FDED (void);
+extern void CloudLogger__ctor_m8EAC616D82D32811846F305271C184FC33DC4A49 (void);
+extern void U3CSendReportU3Ed__8__ctor_mAEA3F452F7AD25F242167B3677AEB39B0AB6724F (void);
+extern void U3CSendReportU3Ed__8_System_IDisposable_Dispose_m9C14F498646EFA39E0281A91CCB431921D93384D (void);
+extern void U3CSendReportU3Ed__8_MoveNext_mC5468900183C2E8B7E0C1571CADAADD114EEB94E (void);
+extern void U3CSendReportU3Ed__8_U3CU3Em__Finally1_mDD7B70AC3E4CAFCBBEDF066175F1360FEEA96FD6 (void);
+extern void U3CSendReportU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m750F6790101358E6EA598B5C6108D319778018FD (void);
+extern void U3CSendReportU3Ed__8_System_Collections_IEnumerator_Reset_m4EF3D40834BEE419F1DDBE3AB5CDAC0E66FAEA9B (void);
+extern void U3CSendReportU3Ed__8_System_Collections_IEnumerator_get_Current_m6B7027A9EECAF070329816FAE7488D78EC15B1FA (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+static Il2CppMethodPointer s_methodPointers[20] = 
+{
+	CrashReportPayload__ctor_m3A78E153E73DEFC0C101087E6C61378B1970D6D1,
+	CloudLogger_Start_mAEF005CFFDF086706B7008497CAEA3D97BED33CB,
+	CloudLogger_OnEnable_m1D058F2837BE484E6370701C3BC1EA72B98FB414,
+	CloudLogger_OnDisable_mBFDF3CB46583A8E15A090ECFB9F2A50AE1F2F802,
+	CloudLogger_CaptureLog_m21FD8D0A161E9081ECD081AB046FB3E3A9EE26D1,
+	CloudLogger_SendReport_mF60D5D48C41354D7C53173025E213DAD8F454A2C,
+	CloudLogger_SendNullReferenceException_m6F207E683E77B34138DCA98A495EB85376A3DC71,
+	CloudLogger_SendInvalidOperationException_mCAA15D33167B0E66E6A41E26015C233C3C105D5D,
+	CloudLogger_SendArgumentException_mE37A792C76F661F1406174EDE23EDC97D2675BE7,
+	CloudLogger_SendCrash_m4591609812D4544E29AB17A7ECD012828DE5FDED,
+	CloudLogger__ctor_m8EAC616D82D32811846F305271C184FC33DC4A49,
+	U3CSendReportU3Ed__8__ctor_mAEA3F452F7AD25F242167B3677AEB39B0AB6724F,
+	U3CSendReportU3Ed__8_System_IDisposable_Dispose_m9C14F498646EFA39E0281A91CCB431921D93384D,
+	U3CSendReportU3Ed__8_MoveNext_mC5468900183C2E8B7E0C1571CADAADD114EEB94E,
+	U3CSendReportU3Ed__8_U3CU3Em__Finally1_mDD7B70AC3E4CAFCBBEDF066175F1360FEEA96FD6,
+	U3CSendReportU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m750F6790101358E6EA598B5C6108D319778018FD,
+	U3CSendReportU3Ed__8_System_Collections_IEnumerator_Reset_m4EF3D40834BEE419F1DDBE3AB5CDAC0E66FAEA9B,
+	U3CSendReportU3Ed__8_System_Collections_IEnumerator_get_Current_m6B7027A9EECAF070329816FAE7488D78EC15B1FA,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+};
+static const int32_t s_InvokerIndices[20] = 
+{
+	14389,
+	14389,
+	14389,
+	14389,
+	2350,
+	2006,
+	14389,
+	14389,
+	14389,
+	14389,
+	14389,
+	10789,
+	14389,
+	13986,
+	14389,
+	14173,
+	14389,
+	14173,
+	25136,
+	14389,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	20,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
