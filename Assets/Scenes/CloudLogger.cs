@@ -1,16 +1,17 @@
-using UnityEngine;
-using UnityEngine.Networking;
-using System.Collections;
 using System;
-using UnityEngine.Diagnostics;
-using TMPro;
+using System.Collections;
 using System.Net.Http;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Diagnostics;
+using UnityEngine.Networking;
 
 [System.Serializable]
 public class CrashReportPayload
 {
-    public string deviceId;
+    public string deviceName;
     public string timestamp;
+
     // public string logString;
     public string stack;
     public string platform;
@@ -24,42 +25,17 @@ public class CloudLogger : MonoBehaviour
 {
     public TMPro.TMP_Text consoleText;
     private string responseMessage;
+
     // Replace this with your Cloudflare Worker or API URL
     // [SerializeField]
     private string reportUrl = "https://shy-sound-2070.aaron-bf6.workers.dev/";
-    private string deviceId;
+    private string deviceName;
 
     // public CrashReportPayload crashReportPayload;
 
-    void Start()
-    {
-        // Utils.ForceCrash(ForcedCrashCategory.FatalError);
-    }
-    // public void OnButtonPress()
-    // {
-    //     int errorType = UnityEngine.Random.Range(0, 3); // 3 types of errors
-    //     try
-    //     {
-    //         switch (errorType)
-    //         {
-    //             case 0:
-    //                 throw new NullReferenceException("Random Null Reference Exception");
-    //             case 1:
-    //                 throw new InvalidOperationException("Random Invalid Operation Exception");
-    //             case 2:
-    //                 throw new ArgumentException("Random Argument Exception");
-    //         }
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         Debug.LogException(ex);
-    //         // Optionally handle recovery here
-    //     }
-    // }
-
     void OnEnable()
     {
-        deviceId = SystemInfo.deviceUniqueIdentifier;
+        deviceName = SystemInfo.deviceName;
         // Subscribe to Unity's log events
         Application.logMessageReceived += CaptureLog;
     }
@@ -72,11 +48,10 @@ public class CloudLogger : MonoBehaviour
 
     void CaptureLog(string logString, string stackTrace, LogType type)
     {
-
         // We only care about Errors and Exceptions
         if (type == LogType.Exception || type == LogType.Error)
         {
-            StartCoroutine(SendReport(deviceId, logString, stackTrace));
+            StartCoroutine(SendReport(deviceName, logString, stackTrace));
         }
     }
 
@@ -85,12 +60,12 @@ public class CloudLogger : MonoBehaviour
         // Create a simple JSON structure using a serializable class
         CrashReportPayload payload = new()
         {
-            deviceId = deviceId,
-            timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(),
+            deviceName = deviceName,
+            timestamp = DateTimeOffset.UtcNow.ToString("o"),
             // logString = logString,
-            stack = stack,
+            stack = logString + "\n" + stack,
             platform = Application.platform.ToString(),
-            version = Application.version
+            version = Application.version,
         };
         string jsonPayload = JsonUtility.ToJson(payload);
 
@@ -104,10 +79,13 @@ public class CloudLogger : MonoBehaviour
 
             yield return request.SendWebRequest();
 
-
             if (request.result != UnityWebRequest.Result.Success)
             {
-                responseMessage = "Failed to send crash report: " + request.error + "\nResponse: " + request.downloadHandler.text;
+                responseMessage =
+                    "Failed to send crash report: "
+                    + request.error
+                    + "\nResponse: "
+                    + request.downloadHandler.text;
             }
             else
             {
@@ -115,7 +93,6 @@ public class CloudLogger : MonoBehaviour
             }
             Debug.Log(responseMessage);
             consoleText.text = responseMessage;
-
         }
     }
 
