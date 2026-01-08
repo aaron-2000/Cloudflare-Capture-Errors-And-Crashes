@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.posthog.unity": {
+      "version": "https://github.com/PostHog/posthog-unity.git?path=com.posthog.unity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4f01175f3055a4bb241c5e04cf815da3d9e1e2eb"
+    },
     "com.unity.2d.animation": {
       "version": "12.0.2",
       "depth": 0,
@@ -281,6 +288,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "io.sentry.unity": {
+      "version": "https://github.com/getsentry/unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ad36b581ab86a846c33a7d509acb9a0dd9016bde"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
